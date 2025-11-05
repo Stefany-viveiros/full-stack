@@ -1,14 +1,15 @@
 body{
-background: rgb(197, 203, 200);
+background: url('../img/bg-site.jpg') no-repeat;
+background-size: cover;
 }
 
 .container {
 background-color: rgb(157, 154, 154);
-padding: 10px;
-margin-top: 10pxpx;
+padding: 20px;
+margin-top: 20px;
 border-radius: 10px;
-margin-left: 40px;
-margin-right: 40px;
+margin-left: 30px;
+margin-right: 30px;
 text-align: center;
 color: rgb(42, 21, 75);
 font-size: 25px;
@@ -27,12 +28,12 @@ input {
     /* box-shadow: 2px black; */
     outline:none;
 }
-button{
+.button {
     padding: 10px;
     background:white;
     color: rgb(69, 73, 161);;
     border-radius: 10px;
     border: 2px solid rgb(69, 73, 161);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+    font-size: 15px;
 }
