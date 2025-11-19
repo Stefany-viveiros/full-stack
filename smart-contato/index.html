@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/reset.css">
 </head>
+
 <body>
     <main class="container">
         <h1>Cadastro de Contatos</h1>
@@ -19,15 +21,21 @@
 
             <section class="group">
                 <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Digite seu email..."  />
+                <input type="text" id="email" placeholder="Digite seu email..." />
             </section>
 
             <section class="group">
                 <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" placeholder="Digite seu telefone..."  />
+                <input type="tel" id="telefone" placeholder="Digite seu telefone..." />
             </section>
 
-            <button type="submit" >Cadastrar</button>
+
+            <section class="group">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" placeholder="Digite seu endereço..." />
+            </section>
+
+            <button type="submit">Cadastrar</button>
         </form>
 
         <h2 class="h2">Lista de Contatos</h2>
@@ -35,11 +43,13 @@
         <ul class="lista">
             <!-- Aqui a lista vai aparecer (Futuramente com JS) -->
             <li class="lista-msg">A lista aparecerá aqui...</li>
-         
+
+            
         </ul>
 
     </main>
-    
+
     <script src="./js/script.js"></script>
 </body>
+
 </html>
