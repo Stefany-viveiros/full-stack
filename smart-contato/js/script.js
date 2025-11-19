@@ -3,7 +3,7 @@ const inputNome = document.getElementById("nome");
 const inputEmail = document.getElementById("email");
 const inputTel = document.getElementById("telefone")
 const lista = document.querySelector(".lista")
-
+const listaMsg = document.querySelector(".lista-msg")
 
 form.addEventListener("submit", function(event){
     event.preventDefault();
@@ -14,6 +14,13 @@ form.addEventListener("submit", function(event){
         alert("Preencha todos os campos");
         alert("Campo(a) vazio, preencha os campos")
         return false;
+    }
+    // Condição, para retirar a li >.lista.msg
+    // se(listamsg=== true)
+
+
+    if(listaMsg) {
+        console.log(listaMsg.remove());
     }
         
     console.log("Nome", inputNome.value);
