@@ -25,3 +25,8 @@ app.get('/produtos', (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`)
 });
+
+//Rota Home
+app.get('/home', (req, res) => {
+    res.sendFile(__dirname + '/public/home.html')
+});
