@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-
+//Middleware para servir arquivos estáticos
+app.use(express.static('public'));
+app.use(express.static('img'))
 //Variavel comos dados produtos
 const produtos = [
     { id: 1, nome: "Produto A", preco: 100 },
@@ -14,7 +16,7 @@ const times = [
     {id: 1, nome: "Santos", ano: 1912 },
     {id: 2, nome: "Bangu", ano: 1900 },
     {id: 3, nome: "Flamengo", ano: 1910 },
-    {id: 1, nome: "Mirasol", ano: 1904 },
+    {id: 4, nome: "Mirasol", ano: 1904 },
 ];
 // Criar função 
 // Rota principal
