@@ -5,9 +5,16 @@ const port = 3000;
 
 //Variavel comos dados produtos
 const produtos = [
-    {id: 1, nome: "Produto A", preco: 100 },
-    {id: 2, nome: "Produto B", preco: 150 },
-    {id: 3, nome: "Produto C", preco: 200 },
+    { id: 1, nome: "Produto A", preco: 100 },
+    { id: 2, nome: "Produto B", preco: 150 },
+    { id: 3, nome: "Produto C", preco: 200 },
+];
+
+const times = [
+    {id: 1, nome: "Santos", ano: 1912 },
+    {id: 2, nome: "Bangu", ano: 1900 },
+    {id: 3, nome: "Flamengo", ano: 1910 },
+    {id: 1, nome: "Mirasol", ano: 1904 },
 ];
 // Criar função 
 // Rota principal
@@ -30,3 +37,9 @@ app.listen(port, () => {
 app.get('/home', (req, res) => {
     res.sendFile(__dirname + '/public/home.html')
 });
+
+//Rota times
+app.get('/times', (req, res) => {
+    res.send(times);
+})
+
