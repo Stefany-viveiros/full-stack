@@ -13,6 +13,13 @@ const nomes = [
 ];
 
 
+//criando Funções Auxiliares
+//Retornar o objeto por ID
+function buscarNomePorId(id) {
+    return nomes.filter((nome) => nome.id == id)
+}
+
+
 //Rota Teste
 app.get("/teste", (req,res) => {
     res.send("API nodePeople está funcionando");
@@ -23,7 +30,17 @@ app.listen(PORT, () => {
 });
 
 //Buscando nomes
-
-app.get("/nomes", (req,res) => {
+app.get("/listaNomes", (req,res) => {
     res.send(nomes)
+})
+
+//Buscando por ID
+app.get("/listaNomes/:id", (req, res) =>{
+    let index = req.params.id;
+
+    res.json(buscarNomePorId(index))
+})
+
+app.get("/", (req, res) => {
+    res.send("Bem vindo!!!!")
 })
