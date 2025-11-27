@@ -39,14 +39,23 @@ app.listen(PORT, () => {
 //Buscando nomes
 app.get("/listaNomes", (req,res) => {
     res.send(nomes)
-})
+});
 
 //Buscando por ID
 app.get("/listaNomes/:id", (req, res) =>{
     let index = req.params.id;
 
     res.json(buscarNomePorId(index))
-})
+});
+
+
+//Criando Post para cadastrar
+app.post("/listaNomes", (req, res) => {
+    nomes.push(req.body);
+    res.status(201).send('Nomes Cadastrados com sucesso!')
+});
+
+
 
 //Criando rota excluir
 app.delete("/listaNomes/:id", (req, res) => {
@@ -54,9 +63,9 @@ app.delete("/listaNomes/:id", (req, res) => {
     nomes.splice(index, 1);
     res.send(`Nomes com id:${req.params.id} excluida com sucesso!`)
     
-})
+});
    
 
 app.get("/", (req, res) => {
     res.send("Bem vindos!!!!")
-})
+});
