@@ -106,3 +106,22 @@ app.delete("/listaTimes/:id", (req, res) => {
 app.get("/", (req, res) => {
     res.send("Bem vindos!!!!")
 });
+
+// Rota alterar
+app.put("/listaNomes/:id", (req, res) => {
+    let index = buscarIdNomes(req.params.id);
+    nomes[index].nome = req.body.nome;
+    nomes[index].idade = req.body.idade;
+
+    res.json(nomes);
+});
+
+app.put("/listaTimes/:id", (req, res) => {
+    let index = buscarIdTimes(req.params.id);
+    times[index].nome = req.body.nome;
+    times[index].estado = req.body.estado;
+    times[index].titulos = req.body.titulos;
+    
+
+    res.json(times);
+});
