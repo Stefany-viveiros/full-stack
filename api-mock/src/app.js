@@ -8,6 +8,8 @@ app.get("/", (req, res) => {
 
 export default app;
 
+app.use(express.json());
+
 
 const cadastros = [
 {
@@ -39,6 +41,44 @@ endereco: "Rua Central, 999"
 }
 ];
 
-app.get("/cadastro", (req, res) => {
+function buscarIdCadastros(id) {
+    return cadastros.filter((cadastro) => cadastro.id == id)
+}
+
+function buscarNomeCadastro (id) {
+    return cadastros.findIndex((cadastro) => cadastro.id == id)
+}
+//buscando cadastro
+app.get("/cadastros", (req, res) => {
     res.send(cadastros)
+});
+
+//Buscando por id
+app.get("/cadastros", (req, res) => {
+    let index = req.params.id;
+    res.json(buscarIdCadastros(index))
+});
+
+//Para deletar id
+app.delete("/cadastros/:id", (req, res) => {
+    let index =buscarNomeCadastro(req.params.id);
+    cadastros.splice(index, 1);
+    res.send(`Cadastros com id:${req.params.id} excluidos com sucesso!`)
+});
+//Criando POST para cadastrar
+app.post("/cadastros", (req, res) => {
+    cadastros.push(req.body);
+    res.status(201).send(`Cadastro adicionado com sucesso!!`)
+})
+
+app.put("/cadastros/:id", (req, res) => {
+    let index = buscarNomeCadastro(req.params.id)
+    cadastros[index].nome = req.body.nome;
+    cadastros[index].telefone = req.body.telefone;
+    cadastros[index].cpf = req.body.cpf;
+    cadastros[index].email=req.body.email;
+    cadastros[index].idade = req.body.idade;
+    cadastros[index].cidade = req.body.cidade;
+
+    res.json(cadastros);
 })
