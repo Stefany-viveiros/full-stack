@@ -65,12 +65,14 @@ app.delete("/cadastros/:id", (req, res) => {
     cadastros.splice(index, 1);
     res.send(`Cadastros com id:${req.params.id} excluidos com sucesso!`)
 });
+
 //Criando POST para cadastrar
 app.post("/cadastros", (req, res) => {
     cadastros.push(req.body);
     res.status(201).send(`Cadastro adicionado com sucesso!!`)
 })
 
+//Criando put para cadastros
 app.put("/cadastros/:id", (req, res) => {
     let index = buscarNomeCadastro(req.params.id)
     cadastros[index].nome = req.body.nome;
