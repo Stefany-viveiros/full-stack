@@ -20,7 +20,19 @@ insert into produtos (nome, email, telefone, cpf, endereco) values
     ('Juliana', 'juliana@gmail.com', '86695566', '879.652.236-8', 'Rua Senai');
     
 -- Seleciona o registro onde o id = 1
-select * from produtos where id = 1;
-select * from produtos where id = 2;
+select * from produtos where id = 9;
+
+-- Delete o registro onde o id = 1--
+delete from produtos where id = 3;
+
+
+
+insert into produtos (nome, email, telefone, cpf, endereco) values
+('Stefany viveiros', 'viveirosstefany@gmail.com', '4588996636', '1149876665', 'Rua Senai');
 
 select * from produtos;
+
+-- Atualizar o nome por id
+update produtos 
+set nome = 'Stefany Barbosa Dev'
+where id = 9
