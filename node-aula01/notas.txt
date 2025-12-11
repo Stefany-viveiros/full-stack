@@ -1,0 +1,14 @@
+1- npm init
+2- npm i express
+
+app.get('/', (req, res) => {})
+* Sempre colocar a barra para entender a requisição
+* push para enviar a requisição
+* get pega as informações
+* send (Significa enviar)
+res.send('')
+res= reposta
+req = requisição
+
+nodemon:
+npm start para rodar o arquivo em tempo real
